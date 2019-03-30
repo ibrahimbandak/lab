@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Guitar Hero 2.0</title>
+
+<!-- 	<style>
+	#color{
+
+	}
+
+
+
+	.box{
+	 
+      background-color: lightgrey;
+      position: absolute;
+      height: 50%;
+      width: 50%;
+      left: 20%;
+      top: 20%;
+    }
+
+	 </style>
+ -->
+<style>
+.square {
+	top: 20px;
+	left: 30px;
+	position:relative;
+  	height: 50px;
+  	width: 50px;
+  	background-color: grey;
+}
+</style>
+<script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<h1>Guitar Hero Game 3.0</h1>
+<div class="boxed">
+	Guitar Hero Level 1
+</div> 
+<button onclick="logColor()">Click To Play!</button>	
+<form>
+  Color:<br>
+  <input type="text" name="Color" id=''>
+  <br>
+  Speed:<br>
+  <input type="text" name="Speed" value="">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+ <form>
+  <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="Guitar Hero Master"> Guitar Hero Master
+</form> 
+
+ <form>
+  <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+  <input type="checkbox" name="vehicle2" value="Car"> I have a car
+</form> 
+
+<div class="square"></div>
+
+
+<script type="text/javascript"> 
+function logColor(color) {
+	var newColor = $("#color");
+	console.log(newColor);
+}
+
+</script>
+
+
+</body>
+</html>
