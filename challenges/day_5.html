@@ -30,12 +30,17 @@ Your job is to:
 
 function submit(){
 	let value = $("#nameInput").val();
-	alert("Hello, " + value);
+	if(value){
+		alert('Hello, ${value}');
+	}else{
+		alert("You did not write anything at all");
+	}
+$("#nameInput").val("")
+	// alert("Hello, " + value);
 }
 
-	
 
-		
+// $ = jquery	
 		
 		
 

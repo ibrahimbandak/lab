@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,24 +24,30 @@
 
 	 </style>
  -->
+
 <style>
 .square {
 	top: 20px;
 	left: 30px;
 	position:relative;
-  	height: 50px;
-  	width: 50px;
+  	height: 500px;
+  	width: 500px;
   	background-color: grey;
 }
 </style>
-<script src="jquery-3.3.1.min.js"></script>
 </head>
 <body>
-<h1>Guitar Hero Game 3.0</h1>
+ 
+<h1 id="helloMessage">Hello there </h1>
+$("#helloMessage").text(`Hello there ${data.species.name}`);
+
 <div class="boxed">
 	Guitar Hero Level 1
-</div> 
-<button onclick="logColor()">Click To Play!</button>	
+</div>
+
+
+<button onclick="makePokemon()" >Click to Display Pokemon!</button>
+
 <form>
   Color:<br>
   <input type="text" name="Color" id=''>
@@ -52,31 +58,38 @@
   <input type="submit" value="Submit">
 </form> 
 
- <form>
-  <input type="radio" name="gender" value="male" checked> Male<br>
-  <input type="radio" name="gender" value="female"> Female<br>
-  <input type="radio" name="gender" value="Guitar Hero Master"> Guitar Hero Master
-</form> 
-
- <form>
-  <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
-  <input type="checkbox" name="vehicle2" value="Car"> I have a car
-</form> 
 
 <div class="square"></div>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript"> 
-function logColor(color) {
+function makePokemon() {
+		var url= `https://pokeapi.co/api/v2/pokemon/1`
+		$.ajax({
+				url: url,
+				type: 'GET',
+				beforeSend: function (xhr) {
+				    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+				},
+				success: function (data) { 
+					// console.log(data.sprites.front_default)
+
+					var picture= (data["sprites"]["front_default"]);
+					 $('body').css( 'cursor', `url(${picture}), auto` );
+				},
+				error: function (data) {
+					console.log(data);
+				},
+			});
 	var newColor = $("#color");
-	console.log(newColor);
+
+	console.log(url);
 }
+
 
 </script>
 
-
 </body>
+
 </html>
-=======
-html:5
->>>>>>> upstream/master
+
